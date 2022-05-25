@@ -13,8 +13,8 @@ namespace Notes.Persistence
             var connectionString = configuration["DbConnection"];
             services.AddDbContext<NotesDbContext>(options =>
             {
-                //options.UseSqlite(connectionString);
-                options.UseSqlServer(connectionString);
+                options.UseSqlite(connectionString);
+               // options.UseSqlServer(connectionString);
             });
             services.AddScoped<INotesDbContext>(provider =>
                 provider.GetService<NotesDbContext>());
